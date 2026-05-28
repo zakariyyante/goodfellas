@@ -1,0 +1,19 @@
+<svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mafia Hat (Fedora) Icon -->
+  <g transform="translate(10, 30)">
+    <!-- Brim -->
+    <path d="M5 85C5 75 25 70 50 70C75 70 95 75 95 85C95 95 75 100 50 100C25 100 5 95 5 85Z" fill="#111111"/>
+    <!-- Crown -->
+    <path d="M25 75L30 35C30 25 40 20 50 20C60 20 70 25 70 35L75 75H25Z" fill="#111111"/>
+    <!-- Band -->
+    <path d="M26.5 65H73.5L72.5 55H27.5L26.5 65Z" fill="#FF0000"/>
+    <!-- Highlight on top -->
+    <path d="M40 25C45 22 55 22 60 25" stroke="white" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <text x="120" y="85" font-family="Impact, sans-serif" font-weight="900" font-size="72" fill="white" letter-spacing="-1">GOOD</text>
+  <text x="340" y="85" font-family="Impact, sans-serif" font-weight="900" font-size="72" fill="#FF0000" letter-spacing="-1">FELLAS</text>
+  <text x="585" y="85" font-family="Arial" font-weight="900" font-size="24" fill="#FFD700">UK</text>
+  <text x="120" y="115" font-family="Courier New, monospace" font-weight="900" font-size="14" fill="white" letter-spacing="6" opacity="0.6">INDEPENDENT CASINO REVIEWS</text>
+</svg>
