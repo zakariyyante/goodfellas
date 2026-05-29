@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-const GA_ID = "AW-18143677749";
+const GA_ID = ""; // TODO: add your Google Ads ID here
 
 export default function RootLayout({
   children,
