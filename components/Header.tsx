@@ -28,7 +28,6 @@ export default function Header() {
           {[
             { name: 'The Base', href: '/' },
             { name: 'The List', href: '/#brands' },
-            { name: 'The Guide', href: '/guide' },
             { name: 'The Family', href: '/about' },
             { name: 'Contact', href: '/contact' }
           ].map((link) => (
@@ -63,7 +62,6 @@ export default function Header() {
           {[
             { name: 'The Base', href: '/' },
             { name: 'The List', href: '/#brands' },
-            { name: 'The Guide', href: '/guide' },
             { name: 'The Family', href: '/about' },
             { name: 'Contact', href: '/contact' }
           ].map((link) => (
