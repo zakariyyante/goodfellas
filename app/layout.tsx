@@ -23,14 +23,13 @@ export const metadata: Metadata = {
   },
 };
 
+const GA_ID = "AW-18143677749";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // User should replace with actual ID
-  const CONVERSION_LABEL = "XXXXXXXXXXXX"; // User should replace with actual label
-
   return (
     <html lang="en" className="scroll-smooth">
       <body
@@ -38,10 +37,10 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
-        
-        {/* Google Tag */}
+
+        {/* Google Tag (gtag.js) */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="google-tag" strategy="afterInteractive">
@@ -49,19 +48,14 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_ID}');
 
-            window.gtag_report_conversion = function(url) {
-              var callback = function () {
-                if (typeof(url) != 'undefined') {
-                  window.location = url;
-                }
-              };
-              gtag('event', 'conversion', {
-                  'send_to': '${GA_MEASUREMENT_ID}/${CONVERSION_LABEL}',
-                  'event_callback': callback
+            // Brand click conversion event
+            window.gtag_report_conversion = function(brandName) {
+              gtag('event', 'brand_click', {
+                'send_to': '${GA_ID}',
+                'brand_name': brandName || 'unknown'
               });
-              return false;
             };
           `}
         </Script>
