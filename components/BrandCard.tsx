@@ -38,9 +38,16 @@ export default function BrandCard({ brand, rank, gclid, compact }: BrandCardProp
 
   const handleCardClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    
-    // Fire Vercel Analytics event
-    track('Brand Click', { brand: brand.name });
+
+    // Unique per-brand event — shows up individually in Vercel Analytics dashboard
+    track(`click_${brand.id}`, {
+      brand:    brand.name,
+      offer:    brand.bonus,
+      rating:   brand.rating,
+      rank:     rank ?? 0,
+      mobile:   compact ? 'yes' : 'no',
+      gclid:    gclid ?? 'none',
+    });
 
     // Fire Google Ads conversion
     if (typeof window !== 'undefined' && window.gtag_report_conversion) {
