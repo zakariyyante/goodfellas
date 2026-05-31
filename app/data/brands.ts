@@ -24,6 +24,19 @@ export interface Brand {
 
 export const brands: Brand[] = [
   {
+    id: "spinpolo",
+    name: "SpinPolo",
+    logo: "/brands/spinpolo.webp",
+    rating: 9.0,
+    bonus: "400% UP TO £12,750 + 400 FS",
+    url: "https://bestcpa.online/click?o=468&a=75&aff_click_id=",
+    displayUrl: "https://spinpolo.com",
+    isMobile: true,
+    votes: 1105,
+    badge: "top-pick",
+  },
+
+  {
     id: "bananzia",
     name: "Bananzia",
     logo: "/brands/bananzia.svg",
@@ -49,18 +62,7 @@ export const brands: Brand[] = [
     badge: "editors-choice",
   },
   
-  {
-    id: "spinpolo",
-    name: "SpinPolo",
-    logo: "/brands/spinpolo.webp",
-    rating: 9.0,
-    bonus: "400% UP TO £12,750 + 400 FS",
-    url: "https://bestcpa.online/click?o=468&a=75&aff_click_id=",
-    displayUrl: "https://spinpolo.com",
-    isMobile: true,
-    votes: 1105,
-    badge: "top-pick",
-  },
+  
   {
     id: "barz",
     name: "Barz",
