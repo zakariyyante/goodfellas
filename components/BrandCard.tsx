@@ -25,7 +25,7 @@ interface BrandCardProps {
 
 declare global {
   interface Window {
-    gtag_report_conversion?: (brandName?: string) => void;
+    gtag_report_conversion?: (url?: string) => void;
   }
 }
 
@@ -42,9 +42,9 @@ export default function BrandCard({ brand, rank, gclid, compact }: BrandCardProp
     // Fire Vercel Analytics event
     track('Brand Click', { brand: brand.name });
 
-    // Fire Google Ads brand_click conversion
+    // Fire Google Ads conversion
     if (typeof window !== 'undefined' && window.gtag_report_conversion) {
-      window.gtag_report_conversion(brand.name);
+      window.gtag_report_conversion(buildUrl(brand.url, gclid));
     }
 
     // Open affiliate URL in new tab

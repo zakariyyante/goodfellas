@@ -50,12 +50,19 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', '${GA_ID}');
 
-            // Brand click conversion event
-            window.gtag_report_conversion = function(brandName) {
-              gtag('event', 'brand_click', {
-                'send_to': '${GA_ID}',
-                'brand_name': brandName || 'unknown'
+            window.gtag_report_conversion = function(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-18079177086/eT_nCN_0yLYcEP6y6axD',
+                'value': 1.0,
+                'currency': 'USD',
+                'event_callback': callback
               });
+              return false;
             };
           `}
         </Script>
