@@ -5,12 +5,15 @@ import { Brand, BadgeType } from "@/app/data/brands";
 import { track } from "@vercel/analytics";
 
 const BADGE_CONFIG: Record<BadgeType, { label: string; icon: string; className: string }> = {
-  "boss-pick":       { label: "Boss's Pick",       icon: "🎩", className: "bg-primary text-black border-primary/60" },
-  "new-release":     { label: "New Release",        icon: "⚡", className: "bg-secondary text-white border-secondary/60" },
-  "fast-withdrawal": { label: "Fast Withdrawal",    icon: "💨", className: "bg-zinc-800 text-accent border-accent/30" },
-  "exclusive":       { label: "Exclusive",          icon: "🔑", className: "bg-zinc-900 text-primary border-primary/40" },
-  "top-rated":       { label: "Top Rated",          icon: "👑", className: "bg-primary text-black border-primary/60" },
-  "hot":             { label: "Hot Right Now",      icon: "🔥", className: "bg-red-900 text-white border-red-600/40" },
+  "boss-pick":       { label: "Boss's Pick",    icon: "🎩", className: "bg-primary text-black border-primary/60" },
+  "new-release":     { label: "New Release",    icon: "⚡", className: "bg-secondary text-white border-secondary/60" },
+  "fast-withdrawal": { label: "Fast Withdrawal",icon: "💨", className: "bg-zinc-800 text-accent border-accent/30" },
+  "exclusive":       { label: "Exclusive",      icon: "🔑", className: "bg-zinc-900 text-primary border-primary/40" },
+  "top-rated":       { label: "Top Rated",      icon: "👑", className: "bg-primary text-black border-primary/60" },
+  "hot":             { label: "Hot Right Now",  icon: "🔥", className: "bg-red-900 text-white border-red-600/40" },
+  "editors-choice":  { label: "Editor's Choice",icon: "✦",  className: "bg-primary text-black border-primary/60" },
+  "expert-choice":   { label: "Expert Choice",  icon: "🏆", className: "bg-zinc-800 text-primary border-primary/40" },
+  "top-pick":        { label: "Top Pick",       icon: "⭐", className: "bg-zinc-900 text-accent border-accent/30" },
 };
 
 interface BrandCardProps {
@@ -70,8 +73,8 @@ export default function BrandCard({ brand, rank, gclid, compact }: BrandCardProp
           {/* Top row: logo + bonus info */}
           <div className="flex items-center gap-4">
             {/* Logo */}
-            <div className="relative w-20 h-16 shrink-0 bg-black/60 border border-primary/10 group-hover:border-primary/30 transition-colors overflow-hidden">
-              <Image src={brand.logo} alt={brand.name} fill className="object-contain p-2" />
+            <div className="relative w-28 h-24 shrink-0 bg-black/60 border border-primary/10 group-hover:border-primary/30 transition-colors overflow-hidden">
+              <Image src={brand.logo} alt={brand.name} fill className="object-contain p-3" />
             </div>
 
             {/* Offer details */}
